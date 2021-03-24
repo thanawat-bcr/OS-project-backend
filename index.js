@@ -2,9 +2,8 @@ import express from 'express';
 
 const mongoose = require('mongoose');
 mongoose.connect(
-  //   'mongodb://172.16.167.2:27017/test',
   'mongodb://tutorism:1234@172.16.167.2:27017/test?authSource=admin',
-  //   'mongodb://127.0.0.1:27017/myDB',
+  // 'mongodb://tutorism:1234@127.0.0.1:27017/test?authSource=admin',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
