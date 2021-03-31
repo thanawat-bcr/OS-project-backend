@@ -91,11 +91,11 @@ app.get('/temp', (req, res) => {
   client.publish('timestamp', timestamp);
 
   // Write on DB
-  const temp = new Temp({
+  const tempItem = new Temp({
     temp: temp,
     timestamp: timestamp,
   });
-  temp
+  tempItem
     .save()
     .then((doc) => console.log(doc))
     .catch((err) => console.log(err));
