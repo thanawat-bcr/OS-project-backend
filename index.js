@@ -90,17 +90,15 @@ app.get('/temp', (req, res) => {
   client.publish('temp', '' + temp);
   client.publish('timestamp', timestamp);
 
-  console.log(temp, timestamp);
-
   // Write on DB
-  // const tempItem = new Temp({
-  //   temp: temp,
-  //   timestamp: timestamp,
-  // });
-  // tempItem
-  //   .save()
-  //   .then((doc) => console.log(doc))
-  //   .catch((err) => console.log(err));
+  const tempItem = new Temp({
+    temp: temp,
+    timestamp: timestamp,
+  });
+  tempItem
+    .save()
+    .then((doc) => console.log(doc))
+    .catch((err) => console.log(err));
   return res.status(200).send('success');
 });
 
