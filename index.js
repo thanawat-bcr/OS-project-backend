@@ -29,7 +29,7 @@ client.on('error', function (error) {
 const mongoose = require('mongoose');
 mongoose.connect(
   // 'mongodb://tutorism:1234@172.16.167.2:27017/temp?authSource=admin',
-  'mongodb://tutorism:1234@127.0.0.1:27017/temp?authSource=admin',
+  'mongodb://tutorism:1234@127.0.0.1:27017/data?authSource=admin',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -60,10 +60,13 @@ db.once('open', function () {
 // );
 // const User = mongoose.model('User', userSchema);
 
-const tempSchema = mongoose.Schema({
-  temp: Number,
-  timestamp: String,
-});
+const tempSchema = mongoose.Schema(
+  {
+    temp: Number,
+    timestamp: String,
+  },
+  { collection: 'temp' }
+);
 const Temp = mongoose.model('Temp', tempSchema);
 
 app.get('/', (req, res) => {
