@@ -90,6 +90,8 @@ app.get('/temp', (req, res) => {
   client.publish('temp', '' + temp);
   client.publish('timestamp', timestamp);
 
+  console.log(temp, timestamp);
+
   // Write on DB
   // const tempItem = new Temp({
   //   temp: temp,
