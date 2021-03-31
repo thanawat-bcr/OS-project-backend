@@ -99,7 +99,7 @@ app.get('/temp', (req, res) => {
   //   .save()
   //   .then((doc) => console.log(doc))
   //   .catch((err) => console.log(err));
-  // return res.status(200).send('success');
+  return res.status(200).send('success');
 });
 
 // app.get('/test', (req, res) => {
