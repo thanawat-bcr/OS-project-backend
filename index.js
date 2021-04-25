@@ -13,7 +13,7 @@ var client = mqtt.connect('mqtt://127.0.0.1:1883', {
   password: '1234',
 });
 // var client = mqtt.connect('mqtt://192.168.1.37:1883', {
-//   username: 'tutorism',
+//   uyarnsername: 'tutorism',
 //   password: '1234',
 // });
 console.log('connected  ' + client.connected);
@@ -63,6 +63,10 @@ const Temp = mongoose.model('Temp', tempSchema);
 
 app.get('/', (req, res) => {
   return res.status(200).send('hello');
+});
+
+app.get('/test', (req, res) => {
+  return res.status(200).json({ log: 'success' });
 });
 
 app.get('/temp', (req, res) => {
